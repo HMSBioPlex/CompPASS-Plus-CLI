@@ -71,6 +71,9 @@ print("Running CompPASS-Plus", quote = FALSE)
 
 results = comppassPlus(data, formula, cvUnit)
 
+# Remove percentile features from output
+results = subset(results, select=-c(uPepBins, ave_apsm_pct, entropy_pct, nwdscore_pct, zscore_pct, plate_zscore_pct, total_psms_pct, ratio_pct, ratioTotalPSMs_pct, UtoTratio_pct))
+
 # Write results to file
 print("Writing results to file.", quote = FALSE)
 
