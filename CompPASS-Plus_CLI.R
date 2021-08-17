@@ -59,7 +59,7 @@ data$class = as.factor(data$class)
 
 data["uPepBins"] = data["uPeps"]
 data[which(data$uPepBins > 10), "uPepBins"] = 10
-data$uPepBins = as.factor(data$uPepBins)
+data$uPepBins = as.factor(round(data$uPepBins))
 
 # Add percentile factors for selected parameters
 data = addPercentileFactors(data)
